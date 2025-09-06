@@ -20,7 +20,7 @@ app.get("/", function (req, res) {
 
 /*############################################################################# */
 
-//Main code for response from API (fully implemented by A C Govardhan)
+//Main code for response from API (implemented by Govardhan)
 
 
 // Route for current timestamp if no date is provided
