@@ -18,11 +18,21 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+/*############################################################################# */
+
+//Main code for response from API (fully implemented by A C Govardhan)
+
+
+// Route for current timestamp if no date is provided
+// Responds with JSON containing Unix time and UTC string
+
 app.get("/api/", function(req, res){
   let now = new Date();
   res.json({unix: now.getTime(), utc: now.toUTCString()})
 })
-// your first API endpoint... 
+
+// Route for timestamp based on provided date or Unix timestamp
+
 app.get("/api/:date", function (req, res) {
   const dateString = req.params.date;
   let date;
@@ -42,7 +52,7 @@ app.get("/api/:date", function (req, res) {
   res.json({unix: date.getTime(), utc: date.toUTCString()})
 });
 
-
+/*######################################################################## */
 
 // Listen on port set in environment variable or default to 3000
 var listener = app.listen(process.env.PORT || 3000, function () {
